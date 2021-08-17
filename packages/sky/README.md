@@ -9,3 +9,5 @@ const sky = require('@adw/sky');
 
 // TODO: DEMONSTRATE API
 ```
+
+1. Changing main package.
