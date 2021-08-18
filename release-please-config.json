@@ -1,5 +1,4 @@
 {
-  "last-release-sha": "afea67ae4d8efe590a36992b59968636d9b9f713",
   "plugins": ["node-workspace"],
   "packages": {
     "packages/sky": {},
