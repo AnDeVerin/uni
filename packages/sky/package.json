@@ -1,6 +1,6 @@
 {
   "name": "@adw/sky",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Sky project",
   "author": "Andrey Vershinin <adw006@ya.ru>",
   "homepage": "https://github.com/AnDeVerin/uni#readme",
@@ -27,6 +27,6 @@
     "url": "https://github.com/AnDeVerin/uni/issues"
   },
   "dependencies": {
-    "@adw/sun": "^1.2.1"
+    "@adw/sun": "^1.2.2"
   }
 }
