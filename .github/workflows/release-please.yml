@@ -1,17 +1,18 @@
+name: release-please
+
 on:
   push:
     branches:
       - main
 
-name: release-please
-
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2
+      - uses: google-github-actions/release-please-action@v2.19.2
         id: release
         with:
+          command: manifest-pr # https://github.com/googleapis/release-please/blob/master/docs/manifest-releaser.md#manifest-pr
           token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           package-name: uni
@@ -22,7 +23,7 @@ jobs:
         # a new release is created:
         if: ${{ steps.release.outputs.release_created }}
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: 14
           registry-url: 'https://registry.npmjs.org'
@@ -36,3 +37,21 @@ jobs:
         # env:
         # NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
+
+      # SLACK NOTIFICATIONS
+      # - name: Notify slack success
+      #   uses: rtCamp/action-slack-notify@master
+      #   env:
+      #     SLACK_TITLE: 'my-client'
+      #     SLACK_CHANNEL: github-actions
+      #     SLACK_COLOR: '#66ff33'
+      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      #   if: steps.release.outputs.release_created == 'success'
+      # - name: Notify slack fail
+      #   uses: rtCamp/action-slack-notify@master
+      #   env:
+      #     SLACK_TITLE: 'my-client'
+      #     SLACK_CHANNEL: github-actions
+      #     SLACK_COLOR: '#cc3300'
+      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      #   if: steps.release.outputs.release_created && failure()
