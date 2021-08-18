@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/AnDeVerin/uni/compare/sun-v1.2.1...sun-v1.2.2) (2021-08-18)
+
+
+### Bug Fixes
+
+* change dep 2 ([7c8afd7](https://www.github.com/AnDeVerin/uni/commit/7c8afd7299e40a18bca4bfa1b7674794f66a7432))
+
 ### [1.2.1](https://www.github.com/AnDeVerin/uni/compare/sun-v1.2.0...sun-v1.2.1) (2021-08-18)
 
 
