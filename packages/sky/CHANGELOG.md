@@ -1,5 +1,14 @@
 # Changelog
 
+### [2.3.1](https://www.github.com/AnDeVerin/uni/compare/sky-v2.3.0...sky-v2.3.1) (2021-08-18)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @adw/sun bumped from ^1.2.0 to ^1.2.1
+
 ## [2.3.0](https://www.github.com/AnDeVerin/uni/compare/sky-v2.2.0...sky-v2.3.0) (2021-08-18)
 
 
