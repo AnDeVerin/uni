@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://www.github.com/AnDeVerin/uni/compare/sky-v2.4.0...sky-v2.5.0) (2021-08-18)
+
+
+### Features
+
+* change sky - 5 ([6593c64](https://www.github.com/AnDeVerin/uni/commit/6593c642ad9a639c5c5a3e07c8f09d6720d65742))
+
 ## [2.4.0](https://www.github.com/AnDeVerin/uni/compare/sky-v2.3.2...sky-v2.4.0) (2021-08-18)
 
 
