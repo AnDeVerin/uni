@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://www.github.com/AnDeVerin/uni/compare/sky-v2.2.0...sky-v2.3.0) (2021-08-18)
+
+
+### Features
+
+* update sky 3 ([d9a7dd3](https://www.github.com/AnDeVerin/uni/commit/d9a7dd381a339b69abbb22815c0b2f6e003b6b75))
+
 ## [2.2.0](https://www.github.com/AnDeVerin/uni/compare/sky-v2.1.0...sky-v2.2.0) (2021-08-18)
 
 
