@@ -16,6 +16,9 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
           release-type: node
           package-name: uni
+          monorepo-tags: uni-
+
+      - run: echo ${{ steps.release.outputs }}
 
       # The logic below handles the npm publication:
       - uses: actions/checkout@v2
