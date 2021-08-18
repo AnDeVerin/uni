@@ -12,7 +12,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v2.29.2
         id: release
         with:
-          command: manifest-pr # https://github.com/googleapis/release-please/blob/master/docs/manifest-releaser.md#manifest-pr
+          command: manifest
           token: ${{ secrets.GH_TOKEN }}
           release-type: node
           package-name: uni
