@@ -11,3 +11,4 @@ const sun = require('@adw/sun');
 ```
 
 1. Change dep package sun 1
+2. Change dep package sun 2
