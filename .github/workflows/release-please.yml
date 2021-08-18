@@ -13,12 +13,10 @@ jobs:
         id: release
         with:
           command: manifest
-          token: ${{ secrets.GH_TOKEN }}
+          # token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           release-type: node
           package-name: uni
-          monorepo-tags: uni-
-
-      - run: echo ${{ steps.release.outputs.releases_created }}
 
       # The logic below handles the npm publication:
       - uses: actions/checkout@v2
@@ -32,14 +30,33 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
         if: ${{ steps.release.outputs.releases_created }}
 
-      - run: npm ci
+      - name: Ensure access
+        run: npm whoami --registry https://npm.pkg.github.com/
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: ${{ steps.release.outputs.releases_created }}
 
-      - run: echo "PUBLISHING"
-        # - run: npm publish
-        # env:
-        # NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: Bootstrap lerna
+        run: npm run bootstrap
         if: ${{ steps.release.outputs.releases_created }}
+
+      - name: Publish packages
+        run: |
+          echo "PUBLISHING"
+          npm run publish:ci
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ steps.release.outputs.releases_created }}
+
+      # - run: npm ci
+      #   if: ${{ steps.release.outputs.releases_created }}
+
+      # - run: echo "PUBLISHING"
+      # - run: npm publish
+      # env:
+      # NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      # if: ${{ steps.release.outputs.releases_created }}
 
       # SLACK NOTIFICATIONS
       # - name: Notify slack success

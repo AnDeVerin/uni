@@ -1,7 +1,11 @@
 {
+  "name": "uni",
+  "version": "1.1.0",
+  "scripts": {
+    "bootstrap": "npx lerna bootstrap",
+    "publish:ci": "lerna publish from-package --yes"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
-  },
-  "name": "uni",
-  "version": "1.1.0"
+  }
 }
